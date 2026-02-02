@@ -1,18 +1,22 @@
 import type { Context } from "hono";
-import { css } from "hono/css";
+import { css, Style } from "hono/css";
 
 export const HMainContainer = (c: Context) => {
-  const headerClass = css`
-    background-color: orange;
-    color: white;
-    padding: 1rem;
+  const bigLetter = css`
+    font-size: 40pt;
+    font-weight: 100;
   `;
 
   return c.html(
     <>
+      <Style></Style>
       <link rel="stylesheet" href="/styles.css" />
-      <div class={headerClass}>
-        <h1>Sysadmin Tools</h1>
+      <div>
+        <h1>
+          <span class={bigLetter}>E</span>nterprise{" "}
+          <span class={bigLetter}>A</span>dmin <span class={bigLetter}>T</span>
+          ools
+        </h1>
       </div>
     </>,
   );
